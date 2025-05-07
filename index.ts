@@ -70,3 +70,28 @@ function processValue(value: string | number): number {
 }
 // console.log(processValue("hello"));
 // console.log(processValue(10));
+
+interface Product {
+  name: string;
+  price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null {
+  if (products.length > 0) {
+    const sorted = products.sort((a, b) => b.price - a.price);
+    return sorted[0];
+  }
+  return null;
+}
+
+// const products = [
+//   { name: "Pen", price: 10 },
+//   { name: "Notebook", price: 25 },
+//   { name: "Bag", price: 50 },
+//   { name: "MaceBook", price: 5000000 },
+//   { name: "Laptop", price: 50000 },
+//   { name: "Mobile", price: 150000 },
+// ];
+
+// console.log(getMostExpensiveProduct(products));
+// console.log(getMostExpensiveProduct([]));
