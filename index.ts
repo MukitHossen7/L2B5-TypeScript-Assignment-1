@@ -1,8 +1,8 @@
 function formatString(input: string, toUpper?: boolean): string {
   if (input && toUpper === false) {
-    return input.toLocaleLowerCase();
+    return input.toLowerCase();
   } else {
-    return input.toLocaleUpperCase();
+    return input.toUpperCase();
   }
 }
 // console.log(formatString("Hello")); // Output: "HELLO"
@@ -57,6 +57,6 @@ class Car extends Vehicle {
     return `Model: ${this.model}`;
   }
 }
-const myCar = new Car("Toyota", 2020, "Corolla");
-console.log(myCar.getInfo());
-console.log(myCar.getModel());
+// const myCar = new Car("Toyota", 2020, "Corolla");
+// console.log(myCar.getInfo());
+// console.log(myCar.getModel());
