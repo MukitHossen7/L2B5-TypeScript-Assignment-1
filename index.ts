@@ -5,9 +5,9 @@ function formatString(input: string, toUpper?: boolean): string {
     return input.toUpperCase();
   }
 }
-// console.log(formatString("Hello")); // Output: "HELLO"
-// console.log(formatString("Hello", true)); // Output: "HELLO"
-// console.log(formatString("Hello", false)); // Output: "hello"
+formatString("Hello");
+formatString("Hello", true);
+formatString("Hello", false);
 
 function filterByRating(
   items: { title: string; rating: number }[]
@@ -15,16 +15,12 @@ function filterByRating(
   const filterRating = items.filter((item) => item.rating >= 4);
   return filterRating;
 }
-// const books = [
-//   { title: "Book A", rating: 4.5 },
-//   { title: "Book B", rating: 3.2 },
-//   { title: "Book C", rating: 5.0 },
-//   { title: "Book D", rating: 5.5 },
-//   { title: "Book E", rating: 3.9 },
-//   { title: "Book F", rating: 4.0 },
-//   { title: "Book G", rating: 4.1 },
-// ];
-// console.log(filterByRating(books));
+const books = [
+  { title: "Book A", rating: 4.5 },
+  { title: "Book B", rating: 3.2 },
+  { title: "Book C", rating: 5.0 },
+];
+filterByRating(books);
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
   let concatenatesArrays: T[] = [];
@@ -33,8 +29,8 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
   }
   return concatenatesArrays;
 }
-// console.log(concatenateArrays([1, 2], [3, 4], [5]));
-// console.log(concatenateArrays(["a", "b"], ["c"]));
+concatenateArrays(["a", "b"], ["c"]);
+concatenateArrays([1, 2], [3, 4], [5]);
 
 class Vehicle {
   private make: string;
@@ -57,9 +53,9 @@ class Car extends Vehicle {
     return `Model: ${this.model}`;
   }
 }
-// const myCar = new Car("Toyota", 2020, "Corolla");
-// console.log(myCar.getInfo());
-// console.log(myCar.getModel());
+const myCar = new Car("Toyota", 2020, "Corolla");
+myCar.getInfo();
+myCar.getModel();
 
 function processValue(value: string | number): number {
   if (typeof value === "string") {
@@ -68,8 +64,8 @@ function processValue(value: string | number): number {
     return value * 2;
   }
 }
-// console.log(processValue("hello"));
-// console.log(processValue(10));
+processValue("hello");
+processValue(10);
 
 interface Product {
   name: string;
@@ -83,18 +79,12 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
   }
   return null;
 }
-
-// const products = [
-//   { name: "Pen", price: 10 },
-//   { name: "Notebook", price: 25 },
-//   { name: "Bag", price: 50 },
-//   { name: "MaceBook", price: 5000000 },
-//   { name: "Laptop", price: 50000 },
-//   { name: "Mobile", price: 150000 },
-// ];
-
-// console.log(getMostExpensiveProduct(products));
-// console.log(getMostExpensiveProduct([]));
+const products = [
+  { name: "Pen", price: 10 },
+  { name: "Notebook", price: 25 },
+  { name: "Bag", price: 50 },
+];
+getMostExpensiveProduct(products);
 
 enum Day {
   Monday,
@@ -112,14 +102,8 @@ function getDayType(day: Day): string {
     return "Weekday";
   }
 }
-
-// console.log(getDayType(Day.Monday));
-// console.log(getDayType(Day.Tuesday));
-// console.log(getDayType(Day.Wednesday));
-// console.log(getDayType(Day.Thursday));
-// console.log(getDayType(Day.Friday));
-// console.log(getDayType(Day.Saturday));
-// console.log(getDayType(Day.Sunday));
+getDayType(Day.Monday);
+getDayType(Day.Sunday);
 
 async function squareAsync(n: number): Promise<number> {
   return new Promise((resolve, reject) => {
@@ -133,5 +117,5 @@ async function squareAsync(n: number): Promise<number> {
   });
 }
 
-squareAsync(0).then(console.log);
-// squareAsync(-2).catch(console.error);
+squareAsync(4).then(console.log);
+squareAsync(-3).catch(console.error);
