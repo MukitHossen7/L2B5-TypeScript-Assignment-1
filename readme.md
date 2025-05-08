@@ -144,3 +144,5 @@ The `Gender` type can be one of three string values: `Male`, `Female`, or `Other
   }
    //TypeScript Error: Property 'isMarried' is missing in type '{ name: string; age: number; }' but    required in type 'IsMarried'.`
 ```
+
+Here the `Student` type is a union of the two types `User` and `IsMarried` with the `&`. This is an `Intersection Type`, meaning the `student1` object must have both `User` and `IsMarried` properties. If there is no `property`, TypeScript will throw an error.
