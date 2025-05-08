@@ -68,7 +68,7 @@ In TypeScript, an interface can be declared and modified multiple times, but if 
   type User = {
     isMarried : boolean;
 
-  }
+  } //Error: Duplicate identifier 'User'
 ```
 
 #### Typescript give this Error: Duplicate identifier 'User'
@@ -84,3 +84,63 @@ In TypeScript, an interface can be declared and modified multiple times, but if 
 
 - If you need a more flexible type such as union, intersection, or tuple then it's better to use type.
 - With type you can define both primitive and non-primitive types in a flexible way.
+
+---
+
+## Provide an example of using union and intersection types in TypeScript.
+
+#### What is Union Types?
+
+The Union type is used when a variable can be any one of multiple types. This is done using the | (pipe) symbol.
+
+#### What are Intersection Types?
+
+The intersection type is used when a variable needs to have all the properties of more than one type. This is done using the & (AND) symbol.
+
+### Union and Intersection Type Examples
+
+- Union type Examples:
+
+```
+type Gender = "Male" | "Female" | "Other"
+
+function checkGender(gender: Gender) {
+    return `You are ${gender}`
+}
+console.log(checkGender("Male")) // Output: "You are Male"
+
+console.log(checkGender("BTS")) // Error: Argument of type '"BTS"' is not assignable to parameter of type 'Gender'
+```
+
+The `Gender` type can be one of three string values: `Male`, `Female`, or `Other`. This is a `union type` because it allows multiple types (or values) but only one at a time.
+
+`Using any string value other than these three string values ​​will result in a TypeScript error.`
+
+- Intersection type Examples:
+
+```
+  type User = {
+    name: string;
+    age: number;
+
+  }
+
+  type IsMarried = {
+      isMarried : boolean;
+  }
+
+  type Student = User & IsMarried
+
+  const student1: Student = {
+     name: "Mukit",
+     age: 24,
+     isMarried : false
+
+  }
+    const student1: Student = {
+     name: "Mukit",
+     age: 24,
+
+  }
+   //TypeScript Error: Property 'isMarried' is missing in type '{ name: string; age: number; }' but    required in type 'IsMarried'.`
+```
