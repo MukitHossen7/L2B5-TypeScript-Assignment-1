@@ -95,3 +95,29 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
 
 // console.log(getMostExpensiveProduct(products));
 // console.log(getMostExpensiveProduct([]));
+
+enum Day {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday,
+}
+function getDayType(day: Day): string {
+  if (day === Day.Sunday || day === Day.Saturday) {
+    return "Weekend";
+  } else {
+    return "Weekday";
+  }
+}
+
+// console.log(getDayType(Day.Monday));
+// console.log(getDayType(Day.Tuesday));
+// console.log(getDayType(Day.Wednesday));
+// console.log(getDayType(Day.Thursday));
+// console.log(getDayType(Day.Friday));
+// console.log(getDayType(Day.Saturday));
+
+console.log(getDayType(Day.Sunday));
