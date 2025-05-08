@@ -72,3 +72,15 @@ In TypeScript, an interface can be declared and modified multiple times, but if 
 ```
 
 #### Typescript give this Error: Duplicate identifier 'User'
+
+### Interface vs Type Which Should You Use?
+
+#### Interface Use
+
+- If you only want to define the structure of an object and need to extend or merge it in the future, then you should use an interface.
+- On the other hand, using an interface to define the structure of a primitive type, array, or function can be a bit complicated.
+
+#### Type Use
+
+- If you need a more flexible type such as union, intersection, or tuple then it's better to use type.
+- With type you can define both primitive and non-primitive types in a flexible way.
