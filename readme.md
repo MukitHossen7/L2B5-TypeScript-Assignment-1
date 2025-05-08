@@ -146,3 +146,11 @@ The `Gender` type can be one of three string values: `Male`, `Female`, or `Other
 ```
 
 Here the `Student` type is a union of the two types `User` and `IsMarried` with the `&`. This is an `Intersection Type`, meaning the `student1` object must have both `User` and `IsMarried` properties. If there is no `property`, TypeScript will throw an error.
+
+### Interface – Which Should You Use?
+
+It is most commonly used to define the type of classes, objects, and functions. If you want to define an object type that will have specific properties, then it is best to use an interface. It can be extended and makes the code more readable and maintainable in large projects.
+
+### Union – Which Should You Use?
+
+The union type is used when a variable or function can accept a type that can be one of more than one different types. For example: string | number means it will either be a string or a number. If a function or variable can be of more than one different type, then the union type is appropriate. It is usually used to handle dynamic input.
