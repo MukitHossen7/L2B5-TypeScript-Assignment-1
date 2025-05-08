@@ -87,7 +87,7 @@ In TypeScript, an interface can be declared and modified multiple times, but if 
 
 ---
 
-## Provide an example of using union and intersection types in TypeScript.
+## 2. Provide an example of using union and intersection types in TypeScript.
 
 #### What is Union Types?
 
